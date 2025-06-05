@@ -1,0 +1,124 @@
+0    <-- ID do grupo
+75     <-- Quartil 1 da Accuracy do modelo DT
+50     <-- Quartil 2 (mediana) da Accuracy do modelo DT
+25     <-- Quartil 3 da Accuracy do modelo DT
+85     <-- Adjacente superior (limite da haste superior) da Accuracy do modelo DT
+15     <-- Adjacente inferior (limite da haste inferior) da Accuracy do modelo DT
+90     <-- Máximo da Accuracy do modelo DT
+10     <-- Mínimo da Accuracy do modelo DT
+0.1  <-- Quartil 1 do F1 (macro) do modelo DT
+0.7  <-- Quartil 2 (mediana) do F1 (macro) do modelo DT
+0.2  <-- (etc)
+1
+0
+0.9
+0.15
+0.75   <-- Quartil 1 do MCC do modelo DT
+0.5    <-- Quartil 2 (mediana) do MCC do modelo DT
+0.25   <-- (etc)
+0.85
+-0.15
+0.9
+-0.2
+0     <-- Início das previsões (classes previstas) do modelo DT
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+1
+1
+1
+0
+1
+0
+1
+1
+1     <-- Final das previsões (classes previstas) do modelo DT
+0.8     <-- Quartil 1 da Accuracy do modelo KNN
+0.75    <-- Quartil 2 (mediana) da Accuracy do modelo KNN
+0.7     <-- (etc)
+0.85
+0.1
+1
+0
+0.82
+0.78
+0.72
+0.87
+0.4
+0.91
+0.35
+0.1
+0.05
+-0.2
+0.2
+-0.25
+0.4
+-0.3
+0     <-- Início das previsões (classes previstas) do modelo KNN
+0
+1
+1
+0
+0
+1
+1
+0
+0
+0
+1
+1
+1
+1.5
+1
+1
+1
+1
+1     <-- Final das previsões (classes previstas) do modelo DT
+0.77     <-- Quartil 1 da Accuracy do modelo NB
+0.72     <-- (etc)
+0.7
+0.78
+0.7
+0.78
+0.2
+0.55
+0.5
+0.49
+0.6
+0.48
+0.62
+0.43
+10
+-2
+8
+5
+5
+0
+1
+0     <-- Início das previsões (classes previstas) do modelo NB
+0
+1
+0
+1
+0
+0
+1
+1
+0
+0
+1
+1
+0
+1
+0
+0
+1
+1
+1     <-- Final das previsões (classes previstas) do modelo NB
