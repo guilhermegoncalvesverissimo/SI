@@ -124,3 +124,74 @@ modelo_final_KNN.fit(X_scaled, y)
 # Naive Bayes (usa dados normalizados)
 modelo_final_NB = GaussianNB()
 modelo_final_NB.fit(X_scaled, y)
+
+# 3.5 RESULTADOS
+
+
+# É ABSOLUTAMENTE NECESSÁRIO indicar o número do grupo:
+GRUPO = 22  # <--- coloca aqui o teu número de grupo
+
+# Podem alterar o nome do ficheiro se quiserem testar com outros ficheiros
+nome_ficheiro_dados_novos = "DadosNovos.csv"
+# Daqui para a frente, não se usa o nome DadosNovos.csv mas apenas a variável nome_ficheiro_dados_novos
+
+# NÃO ALTERAR estas linhas:
+# Aqui definimos o nome do ficheiro de resultados que devem gravar.
+FICHEIRO = nome_ficheiro_dados_novos.split(".")[0]
+nome_ficheiro_resultados = "Resultados_"+FICHEIRO+"_SInt_24_25_grupo"+str(GRUPO)+".txt"
+# Daqui para a frente, usa-se a variável nome_ficheiro_resultados para identificar o ficheiro de resultados
+
+print(GRUPO)
+print(nome_ficheiro_dados_novos)
+print(nome_ficheiro_resultados)
+
+# Se desenvolverem algum código extra aqui,
+# também o devem copiar para o ficheiro Python Aprendizagem_SInt_24_25_grupoXX.py,
+# onde substituem o XX pelo número do vosso grupo.
+
+# --- AQUI COMEÇA O CÓDIGO PARA GERAR O FICHEIRO DE RESULTADOS ---
+
+dados_novos = pd.read_csv(nome_ficheiro_dados_novos, header=None)
+dados_novos_scaled = scaler.transform(dados_novos)
+
+prev_DT = modelo_final_DT.predict(dados_novos)
+prev_KNN = modelo_final_KNN.predict(dados_novos_scaled)
+prev_NB = modelo_final_NB.predict(dados_novos_scaled)
+
+with open(nome_ficheiro_resultados, "w") as f:
+    f.write(f"{GRUPO}\n")
+    f.writelines([f"{v}\n" for v in dt_acc_stats])
+    f.writelines([f"{v}\n" for v in dt_f1_stats])
+    f.writelines([f"{v}\n" for v in dt_mcc_stats])
+    f.writelines([f"{int(v)}\n" for v in prev_DT])
+    f.writelines([f"{v}\n" for v in knn_acc_stats])
+    f.writelines([f"{v}\n" for v in knn_f1_stats])
+    f.writelines([f"{v}\n" for v in knn_mcc_stats])
+    f.writelines([f"{int(v)}\n" for v in prev_KNN])
+    f.writelines([f"{v}\n" for v in nb_acc_stats])
+    f.writelines([f"{v}\n" for v in nb_f1_stats])
+    f.writelines([f"{v}\n" for v in nb_mcc_stats])
+    f.writelines([f"{int(v)}\n" for v in prev_NB])
+
+#-----------------------#-------------------------#
+dados_novos = pd.read_csv(nome_ficheiro_dados_novos, header=None)
+dados_novos_scaled = scaler.transform(dados_novos)
+
+prev_DT = modelo_final_DT.predict(dados_novos)
+prev_KNN = modelo_final_KNN.predict(dados_novos_scaled)
+prev_NB = modelo_final_NB.predict(dados_novos_scaled)
+
+with open(nome_ficheiro_resultados, "w") as f:
+    f.write(f"{GRUPO}\n")
+    f.writelines([f"{v}\n" for v in dt_acc_stats])
+    f.writelines([f"{v}\n" for v in dt_f1_stats])
+    f.writelines([f"{v}\n" for v in dt_mcc_stats])
+    f.writelines([f"{int(v)}\n" for v in prev_DT])
+    f.writelines([f"{v}\n" for v in knn_acc_stats])
+    f.writelines([f"{v}\n" for v in knn_f1_stats])
+    f.writelines([f"{v}\n" for v in knn_mcc_stats])
+    f.writelines([f"{int(v)}\n" for v in prev_KNN])
+    f.writelines([f"{v}\n" for v in nb_acc_stats])
+    f.writelines([f"{v}\n" for v in nb_f1_stats])
+    f.writelines([f"{v}\n" for v in nb_mcc_stats])
+    f.writelines([f"{int(v)}\n" for v in prev_NB])
